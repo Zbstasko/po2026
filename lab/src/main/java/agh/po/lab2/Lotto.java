@@ -5,7 +5,12 @@ public class Lotto {
     public static void main(String[] args) {
         ArrayList<Integer> liczby = new ArrayList<>();
         Random rand = new Random();
-        rand.nextInt(49);
+        while (liczby.size() < 6) {
+            int liczba = rand.nextInt(49) + 1;
+            if(!liczby.contains(liczba)) {
+                liczby.add(liczba);
+            }
+        }
+        System.out.println ("wylosowane lczby:" +liczby);
     }
-    system.out print('wylosowane lczby:')
 }
