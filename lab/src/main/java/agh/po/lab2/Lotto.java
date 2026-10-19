@@ -13,20 +13,27 @@ public class Lotto {
         }
         ArrayList<Integer> liczby = new ArrayList<>();
         Random rand = new Random();
-        while (liczby.size() < 6) {
-            int liczba = rand.nextInt(49) + 1;
-            if (!liczby.contains(liczba)) {
-                liczby.add(liczba);
+        int trafienia = 0;
+        long liczbalosowan = 0;
+        while(trafienia < 6) {
+            liczby.clear();
+            while (liczby.size() < 6) {
+                int liczba = rand.nextInt(49) + 1;
+                if (!liczby.contains(liczba)) {
+                    liczby.add(liczba);
+                }
+                liczbalosowan++;
             }
-        }
-            int trafienia = 0;
             for (int liczba : typy) {
                 if (liczby.contains(liczba)) {
                     trafienia++;
                 }
             }
+        }
+
+
         System.out.println("liczby obstawione:" +typy);
-        System.out.println ("wylosowane lczby:" +liczby);
+        System.out.println ("wylosowane liczby:" +liczby);
         System.out.println("Liczba trafień: " +trafienia);
 
         scanner.close();
