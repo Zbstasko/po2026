@@ -33,4 +33,10 @@ public class CodingBatTest {
         assertEquals(Map.of("a","aa", "b","bbb", "c","bbb"),c.mapAB4(new HashMap<>(Map.of("a","aa", "b","bbb", "c","cake"))));
         assertEquals(Map.of("a","aa", "b","bbb", "c","bbb"),c.mapAB4(new HashMap<>(Map.of("a","aa", "b","bbb"))));
     }
+    @Test
+    public void pairs() {
+        assertEquals(Map.of("b","g", "c","e"),c.pairs(new String[]{"code", "bug"}));
+        assertEquals(Map.of("m","n"),c.pairs(new String[]{"man","moon","main"}));
+        assertEquals(Map.of("g","d","m","n","n","t"),c.pairs(new String[]{"man", "moon", "good", "night"}));
+    }
 }

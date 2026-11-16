@@ -1,5 +1,6 @@
 package agh.po.lab3;
 import java.util.Map;
+import java.util.HashMap;
 public class CodingBat {
     public boolean array123(int[] nums) {
         for (int i=0; i < (nums.length-2); i++) {
@@ -34,6 +35,16 @@ public class CodingBat {
         }
         return map;
     }
+    public Map<String, String> pairs(String[] strings) {
+        Map<String, String> map = new HashMap<>();
+
+        for (String str : strings) {
+            map.put(str.substring(0, 1), str.substring(str.length() - 1));
+        }
+
+        return map;
+    }
+
 
     public static void main(String[] args){
         CodingBat c = new CodingBat();
