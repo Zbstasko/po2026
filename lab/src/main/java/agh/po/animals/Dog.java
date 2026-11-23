@@ -1,7 +1,7 @@
 package agh.po.animals;
 
 public class Dog extends Animal{
-    String getDescription(){
+    public String getDescription(){
         return name + legs;
     }
     {name = "Dog";}

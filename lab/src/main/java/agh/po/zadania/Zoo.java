@@ -10,36 +10,35 @@ public class Zoo {
     Animal[] animals = new Animal[100];
     public void wypelnienietablicy(){
         Random rand = new Random();
-        for(int i=0;i < animals.length; i++){
-          int abc = rand.nextInt(3);
-                  if(abc ==0){
-                      animals[i] = new Dog();
-                  }
-                  if(abc ==1){
-                      animals[i] = new Parrot();
-                  }
-                  if(abc == 2){
-                      animals[i]= new Snake();
-                  }
+        for(int i=0;i < animals.length; i++) {
+            int abc = rand.nextInt(3);
+
+            if (abc == 0) {
+                animals[i] = new Dog();
+            } else if (abc == 1) {
+                animals[i] = new Parrot();
+            } else {
+                animals[i] = new Snake();
+            }
+            System.out.println(animals[i].getDescription());
         }
     }
     public int sumaNog() {
         int suma = 0;
 
         for (int i = 0; i < animals.length; i++) {
-            suma += animals[i].legs;
+            Animal animal = animals[i];
+            int legs = animal.getLegs();
+            suma += legs;
         }
 
         return suma;
     }
+    public static void main(String[] args) {
+        Zoo zoo = new Zoo();
 
-    public class main {
-        public static void main(String[] args){
-            Zoo zoo = new Zoo();
+        zoo.wypelnienietablicy();
 
-            zoo.wypelnienietablicy();
-
-            System.out.println("Suma nóg: " + zoo.sumaNog());
-        }
+        System.out.println("Suma nóg: " + zoo.sumaNog());
     }
 }
