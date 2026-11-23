@@ -1,7 +1,7 @@
 package agh.po.animals;
 
 public abstract class Animal {
-    String name;
-    int legs;
+    public String name;
+    public int legs;
     abstract String getDescription();
 }
